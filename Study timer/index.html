@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>
+            Study Space
+        </title>
+
+        <link rel="stylesheet" href="style.css">
+        <script src="app.js" defer></script>
+    </head>
+    <body>
+        <!--HEADING-->
+        <header class="app-header">
+            <div class="brand">
+                <span class="brand-icon">🪐</span>
+                <div>
+                    <h1>Study Space</h1>
+                    <p>Corner for focus and progress</p>
+                </div>
+            </div>
+
+            <!--NAVIGATION-->
+            <nav aria-label="Main navigation">
+                <a href="#focus">Focus Timer</a>
+                <a href="#tracker">Study Tracker</a>
+            </nav>
+        </header>
+
+        <main class="dashboard">
+
+            <section class="welcome-section">
+                <p class="eyebrow">STUDY DASHBOARD</p>
+                <h2>Lock in gurla!</h2>
+                <p>Do it or don't. Time will pass anyway.</p>
+            </section>
+
+            <div class="dashboard-grid">
+                <section class="panel focus-panel" id="focus">
+                    <p class="eyebrow">Every minute matters.</p>
+                    <h2>Focus Timer</h2>
+
+                    <!--FOCUS BUTTONS-->
+                    <div class="timer-modes">
+                        <button class="mode-button active" data-mode="focus" type="button">Focus</button>
+                        <button class="mode-button" data-mode="short" type="button">Short Break</button>
+                        <button class="mode-button" data-mode="long" type="button">Long Break</button>
+                    </div>
+
+                    <!--TIMER-->
+                    <div class="timer-display">
+                        <span id="timer-time">50:00</span>
+                        <span id="timer-status">Ready to focus?</span>
+                    </div>
+
+                    <div class="timer-progress">
+                        <div id="timer-progress-fill"></div>
+                    </div>
+
+                    <div class="timer-controls">
+                        <button id="start-button" class="primary-button" type="button">Start focus</button>
+                        <button id="pause-button" class="secondary-button" type="button">Pause</button>
+                        <button id="reset-button" class="secondary-button" type="button">Reset</button>
+                    </div>
+
+                    <p class="timer-note">
+                        Focus on one thing at a time.
+                    </p>
+                </section>
+                <section class="panel tracker-panel" id="tracker">
+                    <p class="eyebrow">DISCIPLINE & CONSISTENCY</p>
+                    <h2>Study Tracker</h2>
+
+                    <div class="study-summary">
+                        <div class="summary-card">
+                            <span>Today's study time</span>
+                            <strong id="today-time">0 min</strong>
+                        </div>
+
+                        <div class="summary-card">
+                            <span>This week's study time</span>
+                            <strong id="week-time">0 min</strong>
+                        </div>
+                    </div>
+
+                    <div class="goal-selection">
+                        <label for="daily-goal">Daily study goal</label>
+                        <strong id="goal-label">120 min</strong>
+                        <input type="range" id="daily-goal" min="30" max="720" step="30" value="120">
+                        <div class="goal-progress-track">
+                            <div id="goal-progress-fill"></div>
+                        </div>
+
+                        <p id="goal-message">Work toward daily goal!</p>
+                    </div>
+
+                    <div class="study-history">
+                        <h3>Recent study sessions</h3>
+                        <ul id="study-history-list">
+                            <li>No completed sessions yet.</li>
+                        </ul>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+
+        <footer class="app-footer">
+            <p>Nothing worth having comes easily.</p>
+        </footer>
+
+    </body>
+</html>

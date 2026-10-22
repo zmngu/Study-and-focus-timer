@@ -1,0 +1,337 @@
+:root {
+    --background: #f3effb;
+    --primary: #8b78b8;
+    --primary-hover: #75629f;
+    --card-background: #fffdf8;
+    --text: #382d4a;
+    --accent: #d9a6bc;
+    --secondary: #e6d9f5;
+    --border: #e3daef;
+    --muted-text: #796f87;
+    --success: #64866d;
+}
+
+/*GENERAL STYLING*/
+* {
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+}
+button, 
+input {
+    font: inherit;
+}
+button {
+    cursor: pointer;
+    transition: background 0.2s ease,
+                transform 0.2s ease;
+}
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+}
+a {
+    color: var(--primary-hover);
+    text-decoration: none;
+}
+
+/*HEADER*/
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    padding: 22px 7%;
+    background: var(--card-background);
+    border-bottom: 1px solid var(--border);
+}
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.brand-icon {
+    font-size: 3rem;
+}
+.brand h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+.brand p {
+    margin: 0;
+    color: var(--muted-text);
+    font-size: 0.9rem;
+}
+.main-nav, 
+.app-header nav {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+.app-header nav a {
+    font-weight: 600;
+}
+.app-header nav a:hover {
+    color: var(--primary);
+}
+
+/*MAIN DASHBOARD*/
+.dashboard {
+    width: min(1100px, 90%);
+    margin: 0 auto;
+    padding: 35px 0;
+}
+.welcome-section {
+    padding: 30px;
+    margin-bottom: 28px;
+    border-radius: 20px;
+    background: var(--secondary);
+}
+.welcome-section h2 {
+    margin: 4px 0;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+}
+.welcome-section p {
+    margin-top: 8px;
+}
+.eyebrow {
+    margin: 0 0 6px;
+    color: var(--primary-hover);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+/*PANELS & HEADINGS*/
+.panel {
+    min-width: 0;
+    padding: 26px;
+    background: var(--card-background);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(56, 45, 74, 0.06);
+}
+.panel h2{
+    margin: 0 0 18px;
+    font-size: 1.5rem;
+}
+panel h3 {
+    font-size: 1.05rem;
+}
+.timer-description {
+    color: var(--muted-text);
+}
+
+/*TIMER BUTTONS*/
+.timer-modes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 20px 0;
+}
+.mode-button {
+    flex: 1;
+    min-width: 85px;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background: var(--secondary);
+    color: var(--text);
+}
+.mode-button:hover {
+    background: #DCD0EF;
+}
+.mode-button.active {
+    background: var(--primary);
+    color: #FFFFFF;
+}
+
+/*TIMER DISPLAY*/
+.timer-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 28px 10px;
+    margin: 18px 0;
+    border-radius: 18px;
+    background: var(--background);
+}
+#timer-time {
+    font-size: clamp(3rem, 8vw, 4.5rem);
+    line-height: 1.2;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 2px;
+}
+#timer-status {
+    color: var(--muted-text);
+    font-size: 0.95rem;
+}
+
+/*TIMER PROGRESS BAR*/
+.timer-progress,
+.goal-progress-track {
+    height: 10px;
+    overflow: hidden;
+    border-radius: 20px;
+    background: var(--secondary);
+}
+#timer-progress-fill,
+#goal-progress-fill {
+    width: 0%;
+    height: 100%;
+    border-radius: inherit;
+    background: var(--primary);
+    transition: width 0.3s ease;
+}
+
+/*TIMER CONTROLS*/
+.timer-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 22px;
+}
+.primary-button,
+.secondary-button {
+    padding: 11px 18px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+}
+.primary-button {
+    background: var(--primary);
+    color: #FFFFFF;
+}
+.primary-button:hover {
+    background: var(--primary-hover);
+}
+.secondary-button {
+    background: var(--secondary);
+    color: var(--text);
+}
+.secondary-button:hover {
+    background: #DCD0EF;
+}
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+}
+.timer-note {
+    margin-top: 20px;
+    color: var(--muted-text);
+    font-size: 0.9rem;
+}
+
+/*STUDY TRACKER*/
+.study-summary {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin: 20px 0;
+}
+.summary-card {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 18px;
+    border-radius: 14px;
+    background: var(--background);
+}
+.summary-card span {
+    color: var(--muted-text);
+    font-size: 0.85rem;
+}
+.summary-card strong{
+    font-size: 1.5rem;
+    overflow-wrap: anywhere;
+}
+.goal-section {
+    margin-top: 25px;
+}
+.goal-heading {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+#daily-goal {
+    width: 100%;
+    accent-color: var(--primary);
+    cursor: pointer;
+}
+.goal-progress-track {
+    margin-top: 12px;
+}
+#goal-message {
+    color: var(--muted-text);
+    font-size: 0.9rem;
+}
+.study-history {
+    margin-top: 28px;
+}
+#study-history-list {
+    padding-left: 20px;
+}
+#study-history-list li {
+    padding: 8px 0;
+    overflow-wrap: anywhere;
+}
+.empty-message {
+    color: var(--muted-text);
+}
+
+/*FOOTER*/
+.app-footer {
+    padding: 22px;
+    text-align: center;
+    color: var(--muted-text);
+}
+
+/*RESPONSIVE DESIGN*/
+@media (max-width: 760px) {
+    .app-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+    .dashboard {
+        width: 92%;
+        padding-top: 22px;
+    }
+    .panel {
+        padding: 20px;
+    }
+    .welcome-section {
+        padding: 24px;
+    }
+}
+@media (max-width: 400px) {
+    .study-summary {
+        grid-template-columns: 1fr;
+    }
+    .timer-controls {
+        flex-direction: column;
+    }
+    .timer-controls button {
+        width: 100%;
+    }
+}
